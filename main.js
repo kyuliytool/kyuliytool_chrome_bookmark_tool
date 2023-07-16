@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 
 let mainWindow;
@@ -14,7 +14,7 @@ function createWindow() {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile(path.join(__dirname, 'frontDist', 'index.html'))
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
